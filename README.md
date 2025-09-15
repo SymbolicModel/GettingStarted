@@ -25,9 +25,23 @@ We use Visual Studio Code to guide you through the installation process.
 
 7. Run the rest of the notebook to finish the install and test the installation.
 
+A successful run will have learning outputs from `PySR` and `PySINDy`. Compare the output with [the version on Github](GettingStarted.ipynb). 
 ## On your local machine: Windows
 (To appear)
 
+
+## FAQ / Troubleshoot
+If your system is using a Python version older than 3.11, you may run into issues. In this case, consider the following options:
+
+Linux/Mac:
+- Install [PyEnv](https://github.com/pyenv/pyenv) following the procedure on the website to install a separate Python version (3.13.xx recommended).
+  
+Mac:
+- Using homebrew is an alternative to [PyEnv](https://github.com/pyenv/pyenv) if you already have homebrew installed.
+  
+Windows:
+- Download and install the latest [Python version 3.13](https://www.python.org/downloads/windows/).
+  
 ## Google Colab
 It is recommended that you at least attempt to install Python and the packages locally. If all attempts fail, you may fall back on Google Colab as a working environment.
 
