@@ -35,9 +35,12 @@ If your system is using a Python version older than 3.11, you may run into issue
 
 Linux/Mac:
 - Install [PyEnv](https://github.com/pyenv/pyenv) following the procedure on the website to install a separate Python version (3.13.xx recommended).
+- PyEnv may require build dependency to be installed first.
+-   For linux, these dependency are usually installed with a single command on the package manager.
+-   For Mac, you may need to first enable developer options (`xcode-select --install`) and install [homebrew](https://brew.sh).
   
 Mac:
-- Using homebrew is an alternative to [PyEnv](https://github.com/pyenv/pyenv) if you already have homebrew installed.
+- Installing custom python version via [homebrew](https://docs.brew.sh/Homebrew-and-Python) directly is an alternative to [PyEnv](https://github.com/pyenv/pyenv) if you already have homebrew installed.
   
 Windows:
 - Download and install the latest [Python version 3.13](https://www.python.org/downloads/windows/).
