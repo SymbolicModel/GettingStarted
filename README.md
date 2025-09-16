@@ -85,4 +85,4 @@ Windows (non-WSL):
 ## Google Colab
 It is recommended that you at least attempt to install Python and the packages locally. If all attempts fail, you may fall back on Google Colab as a working environment.
 
-Setting up - Simply run the `GettingStarted.ipynb`.
+Setting up - Simply run the `GettingStarted.ipynb` on [this link](https://colab.research.google.com/github/SymbolicModel/GettingStarted/blob/main/GettingStarted.ipynb).
