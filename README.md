@@ -7,7 +7,7 @@ If you're confident with Python and setting up virtual environment, set a virtua
 If you're not familiar with setting up virtual environment, follow the procedure below using VS Code.
 
 0. (Install Python - Recommended version: 3.13.x )
-   Most Linux distro and Mac has python pre-installed - skip this step.
+   Most Linux distro and Mac has python pre-installed. You may skip this step if your Python version is 3.11+
 
 1. Install [VS Code](https://code.visualstudio.com/Download) and open it.
     We use Visual Studio Code to guide you through the rest of the installation process.
