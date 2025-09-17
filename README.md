@@ -44,7 +44,7 @@ A successful run will have learning outputs from `PySR` and `PySINDy`. Compare t
 2. Install WSL
    - Open PowerShell in **administrator** mode by right-clicking and selecting "Run as administrator", enter the `wsl --install` command, then **restart your machine**.
    - Open PowerShell or Terminal (not in administrator mode) and type in `wsl --install Ubuntu-24.04`.
-     - You will be prompt to create a user name and password for the Linux system.
+     - You will be prompted to create a user name and password for the Linux system.
 3. Open a **WSL terminal window** (using the start menu and navigate to `Ubuntu` or by typing `wsl` from a command prompt / PowerShell).
 4. Type `code` to open a VS Code. 
 5. Follow the rest of the guide above for Linux, starting from step 2.
@@ -64,6 +64,16 @@ This option will require that you know your way around installing Python properl
   - pandas
   - matplotlib
 
+First, clone this repo: 
+```
+git clone https://github.com/SymbolicModel/GettingStarted.git
+```
+Then open VSCode:
+```
+code
+```
+Install the 'Jupyter', 'Python Environments' and 'Python' extensions, then open `GettingStarted.ipynb` and, in the top right, click on where it says 'Python 3.x.xx'. This will bring up a prompt to choose a kernel from the ones available, or to 'Select another Kernel'. If one of the kernels available is named `.venv`, choose that one. Otherwise, click 'Select another Kernel' and choose the newest version of python available. Then you should be able to run the notebook!
+
 
 ## FAQ / Troubleshoot
 If your system is using a Python version older than 3.11, you may run into issues. In this case, consider the following options:
@@ -80,7 +90,7 @@ Mac:
   
 
 Windows (non-WSL):
-- Download and install the latest [Python version 3.13](https://www.python.org/downloads/windows/) and retry.
+- Download and install the latest [Python version 3.13](https://www.python.org/downloads/windows/) and retry. 
 
 ### Manual Installation of WSL (Windows only)
 If you have run out of storage on your C:\ drive, WSL installation will fail. To install WSL on another drive, first find the Ubuntu 24.04 link on [this page](https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions) and copy the link to download the distribution, which should look something like `https://aka.ms/wslubuntu`. Move it to a space on your preferred drive. Then run Powershell as an administrator (right click -> 'run as administrator') and type the following commands: 
@@ -122,7 +132,7 @@ Then look for an `appx`-extension file:
 ```
 Get-Childitem -Filter *.appx
 ```
-Then rename it to `.zip` so that we can extract it:
+Then rename it to `.zip` so that we can extract it e.g.:
 ```
 ren .\Ubuntu_2404.x.x.xx.appx .\Ubuntu_2404.zip
 ```
@@ -130,7 +140,7 @@ Extract the new file:
 ```
 Expand-Archive .\Ubuntu_2404.zip
 ```
-Set cwd to the new folder:
+Set cwd to the new folder created by the extraction:
 ```
 Set-Location .\Ubuntu_2404
 ```
@@ -142,7 +152,10 @@ And then we can run it:
 ```
 ubuntu.exe
 ```
-  
+### Installing pip on WSL
+It's possible that your WSL installation comes without pip, which will mean when you try to `pip install pysr` you will see an 'unknown command' error. To fix this, you'll need to install pip yourself.
+First, try running `python3 -m ensurepip --upgrade` in your ubuntu terminal. 
+If that doesn't work, you need to run the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` to create a python file called 'get-pip'. Run it with `python3 -m get-pip`. Check that it's installed properly by running `pip install pysr`. If that doesn't work, try running `python3 -m pip install pysr`. You should now be able to install packages to your ubuntu distribution. 
 ## Google Colab
 It is recommended that you at least attempt to install Python and the packages locally. If all attempts fail, you may fall back on Google Colab as a working environment.
 
