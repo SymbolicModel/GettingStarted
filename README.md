@@ -160,8 +160,14 @@ ubuntu.exe
 ```
 ### Installing pip on WSL
 It's possible that your WSL installation comes without pip, which will mean when you try to `pip install pysr` you will see an 'unknown command' error. To fix this, you'll need to install pip yourself.
-First, try running `python3 -m ensurepip --upgrade` in your ubuntu terminal. 
-If that doesn't work, you need to run the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` to create a python file called 'get-pip'. Run it with `python3 -m get-pip`. Check that it's installed properly by running `pip install pysr`. If that doesn't work, try running `python3 -m pip install pysr`. You should now be able to install packages to your ubuntu distribution. 
+Try to use the following command to install pip:
+     ```
+     sudo apt update;
+     sudo apt install -y python3-pip python3-venv
+     ```
+If that doesn't work, try the following:
+   1. Try running `python3 -m ensurepip --upgrade` in your ubuntu terminal. 
+   2. If that doesn't work, you need to run the command `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` to create a python file called 'get-pip'. Run it with `python3 -m get-pip`. Check that it's installed properly by running `pip install pysr`. If that doesn't work, try running `python3 -m pip install pysr`. You should now be able to install packages to your ubuntu distribution. 
 ## Google Colab
 It is recommended that you at least attempt to install Python and the packages locally. If all attempts fail, you may fall back on Google Colab as a working environment.
 
