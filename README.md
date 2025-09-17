@@ -84,35 +84,64 @@ Windows (non-WSL):
 
 ### Manual Installation of WSL (Windows only)
 If you have run out of storage on your C:\ drive, WSL installation will fail. To install WSL on another drive, first find the Ubuntu 24.04 link on [this page](https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions) and copy the link to download the distribution, which should look something like `https://aka.ms/wslubuntu`. Move it to a space on your preferred drive. Then run Powershell as an administrator (right click -> 'run as administrator') and type the following commands: 
-```Set-Location D:```
+
+```
+Set-Location D:
+```
    - This sets the current working directory (cwd) to the D: drive. If you want to use a different drive, replace the `D:` with the name of that drive.
-```New-Item WSL -Type Directory```
+```
+New-Item WSL -Type Directory
+```
    - This creates a folder to store our new WSL installation in.
-```Set-Location .\WSL```
+```
+Set-Location .\WSL
+```
    - This moves our cwd to our new folder.
-```curl -L -o Linux.appx <distribution_url>```
+```
+curl -L -o Linux.appx <distribution_url>
+```
    - This will download the distribution from the link that we found earlier, and put it in a file called `Linux.appx`.
-```Copy-Item .\Linux.appx .\Linux.zip```
+```
+Copy-Item .\Linux.appx .\Linux.zip
+```
    - Makes a backup copy of our linux distribution.
-```Expand-Archive .\Linux.zip```
+```
+Expand-Archive .\Linux.zip
+```
    - Extracts our Linux distribution so that we can use the files in it.
-```Get-Childitem -Filter *.exe```
+```
+Get-Childitem -Filter *.exe
+```
    - Looks for an executable file that we can use to run WSL from.
 Once you have found the executable, which should be called `ubuntu.exe`, run it (by typing `ubuntu.exe` into either Powershell or cmd) and you should have a working terminal where you can type commands.
 It might be the case that `Get-Childitem -Filter *.exe` does not return any results. If this happens, set your cwd to the new `Linux` folder:
-```Set-Location Linux```
+```
+Set-Location Linux
+```
 Then look for an `appx`-extension file:
-```Get-Childitem -Filter *.appx```
+```
+Get-Childitem -Filter *.appx
+```
 Then rename it to `.zip` so that we can extract it:
-```ren .\Ubuntu_2404.x.x.xx.appx .\Ubuntu_2404.zip```
+```
+ren .\Ubuntu_2404.x.x.xx.appx .\Ubuntu_2404.zip
+```
 Extract the new file:
-```Expand-Archive .\Ubuntu_2404.zip```
+```
+Expand-Archive .\Ubuntu_2404.zip
+```
 Set cwd to the new folder:
-```Set-Location .\Ubuntu_2404```
+```
+Set-Location .\Ubuntu_2404
+```
 Now we should be able to see the executable:
-```Get-Childitem -Filter *.exe```
+```
+Get-Childitem -Filter *.exe
+```
 And then we can run it:
-```ubuntu.exe```
+```
+ubuntu.exe
+```
   
 ## Google Colab
 It is recommended that you at least attempt to install Python and the packages locally. If all attempts fail, you may fall back on Google Colab as a working environment.
