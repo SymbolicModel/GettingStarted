@@ -46,8 +46,14 @@ A successful run will have learning outputs from `PySR` and `PySINDy`. Compare t
    - Open PowerShell or Terminal (not in administrator mode) and type in `wsl --install Ubuntu-24.04`.
      - You will be prompted to create a user name and password for the Linux system.
 3. Open a **WSL terminal window** (using the start menu and navigate to `Ubuntu` or by typing `wsl` from a command prompt / PowerShell).
-4. Type `code` to open a VS Code. 
-5. Follow the rest of the guide above for Linux, starting from step 2.
+4. Install `pip` and `venv` using the following command
+     ```
+     sudo apt update;
+     sudo apt install -y python3-pip python3-venv
+     ```
+     - You will be prompted for password. Use the one you've just created in the previous step.
+6. Type `code` to open a VS Code. Goes to Extension and click `Reload` under the WSL extension. (Skip this step if WSL extension is already up-to-date.)
+7. Follow the rest of the guide above for Linux, starting from step 2.
 
 ### Option 2: Run Python directly on Windows
 
